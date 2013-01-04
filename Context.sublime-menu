@@ -1,0 +1,8 @@
+[
+    { "caption": "-" },
+    {
+        "caption": "Go To Class",
+        "command": "go_to_class"
+    },
+    { "caption": "-" }
+]

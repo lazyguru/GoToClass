@@ -1,0 +1,6 @@
+[
+    {
+        "keys": ["ctrl+alt+o"],
+        "command": "go_to_class"
+    }
+]
