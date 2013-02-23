@@ -14,3 +14,6 @@ Sublime Text 2 Plugin to open the class file of the highlighted name
 	Mac OS X: CTRL+CMD+O
 	Windows:  CTRL+ALT+O
 	Linux:    CTRL+ALT+O
+
+### Settings
+    go_to_class_separator: the separator between words in the class name. Default is "_"
