@@ -1,7 +1,7 @@
 GoToClass
 =============
 
-Sublime Text 2 Plugin to open the class file of the highlighted name
+Sublime Text Plugin to open the class file of the highlighted name.  Works in ST2 and ST3
 
 
 ### Usage
