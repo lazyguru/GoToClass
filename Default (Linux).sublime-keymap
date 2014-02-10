@@ -2,5 +2,13 @@
     {
         "keys": ["ctrl+alt+o"],
         "command": "go_to_class"
+    },
+    {
+        "keys": ["ctrl+shift+r"],
+        "command": "go_to_function"
+    },
+    {
+        "keys": ["ctrl+shift+;"],
+        "command": "go_to_data"
     }
 ]
