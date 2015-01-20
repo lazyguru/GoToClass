@@ -8,6 +8,7 @@ Sublime Text Plugin to open the class file of the highlighted name.  Works in ST
 -----
 
 * Highlight My_Special_Class_File, right click, choose "Go To Class", and it will select My/Special/Class/File using the fuzzy search
+* Press "Go To Parent Class" keybinding, and it will select parent class My/Special/Class/File using the fuzzy search
 * Highlight My_Function, right click, choose "Go To Function", and it will select My_Function using the fuzzy search prefixed with '@'
 * Highlight My_Data, right click, choose "Go To Data", and it will select My_Data using the fuzzy search prefixed with '#'
 
@@ -18,6 +19,12 @@ Go To Class
 	Mac OS X: CTRL+CMD+O
 	Windows:  CTRL+ALT+O
 	Linux:    CTRL+ALT+O
+
+Go To Parent Class
+
+	Mac OS X: SUPER+SHIFT+O
+	Windows:  CTRL+SHIFT+O
+	Linux:    CTRL+SHIFT+O
 
 Go To Function
 
