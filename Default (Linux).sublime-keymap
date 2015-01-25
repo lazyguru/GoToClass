@@ -4,6 +4,10 @@
         "command": "go_to_class"
     },
     {
+        "keys": ["ctrl+shift+o"],
+        "command": "go_to_parent_class"
+    },
+    {
         "keys": ["ctrl+shift+r"],
         "command": "go_to_function"
     },

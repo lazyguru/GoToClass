@@ -5,6 +5,10 @@
         "command": "go_to_class"
     },
     {
+        "caption": "Go To Parent Class",
+        "command": "go_to_parent_class"
+    },
+    {
         "caption": "Go To Function",
         "command": "go_to_function"
     },
