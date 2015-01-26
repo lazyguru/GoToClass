@@ -20,7 +20,7 @@ class GoToParentClassCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         content = self.view.substr(sublime.Region(0, self.view.size()))
         # TODO match class declaration lines: class\s+(.*)\s+{. Then remove comments and find the parent class names
-        pattern = re.compile('^(final\s+|abstract\s+)*class\s+\S+\s+extends\s+(\S+)', re.MULTILINE|re.IGNORECASE)
+        pattern = re.compile('^\s*(final\s+|abstract\s+)*class\s+\S+\s+extends\s+(\S+)', re.MULTILINE|re.IGNORECASE)
         matches = pattern.findall(content)
 
         if len(matches) == 0:
