@@ -10,7 +10,7 @@ import sublime_plugin
 def getFullyQualifiedClassName(view, string, selection = False):
     # If string starts with a backslash - do nothing
     if string[0] == '\\':
-        return string
+        return string.strip('\\')
 
     found = False
     alias = string.split('\\')[0];
@@ -18,7 +18,7 @@ def getFullyQualifiedClassName(view, string, selection = False):
     # check if we inside 'namespace' or 'use' lines
     if selection != False:
         if view.match_selector(selection.begin(), 'meta.namespace.php'):
-            return '\\' + string
+            return string
 
         if view.match_selector(selection.begin(), 'meta.use.php'):
             found = True # hack to skip 'meta.namespace.php' logic below
@@ -52,7 +52,7 @@ def getFullyQualifiedClassName(view, string, selection = False):
             namespace = view.substr(region);
             string = namespace.split()[1] + string
 
-    return '\\' + string.strip('\\')
+    return string.strip('\\')
 
 
 class GoToClassCommand(sublime_plugin.TextCommand):
