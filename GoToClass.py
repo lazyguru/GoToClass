@@ -1,6 +1,5 @@
 import sublime
 import sublime_plugin
-import re
 
 
 class GoToClassCommand(sublime_plugin.TextCommand):
@@ -18,17 +17,16 @@ class GoToClassCommand(sublime_plugin.TextCommand):
 
 class GoToParentClassCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        content = self.view.substr(sublime.Region(0, self.view.size()))
-        # TODO match class declaration lines: class\s+(.*)\s+{. Then remove comments and find the parent class names
-        pattern = re.compile('^\s*(final\s+|abstract\s+)*class\s+\S+\s+extends\s+(\S+)', re.MULTILINE|re.IGNORECASE)
-        matches = pattern.findall(content)
+        regions = self.view.find_by_selector('entity.other.inherited-class.php')
 
-        if len(matches) == 0:
+        if len(regions) == 0:
             return;
 
-        # transform matches into list of unique parent class names
         parent_class = []
-        [parent_class.append(match[1]) for match in matches if match[1] not in parent_class]
+        for region in regions:
+            string = self.view.substr(region)
+            if string not in parent_class:
+                parent_class.append(string)
 
         if len(parent_class) > 1:
             def on_parent_class_select(index):
